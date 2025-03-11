@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vibe Account</title>
+    <title>Login</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -12,13 +12,15 @@
     </div>
     
     <div class="login-form-container" id="login-form-container">
-        <h2>Vibe Account</h2>
         <form id="login-form">
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Login</button>
+            <div class="form-row button-row">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">LOGIN</button>
+            </div>
+            <a href="#" class="forgot-password">Forget Login Information</a>
         </form>
     </div>
 
@@ -27,6 +29,7 @@
         <p>Enter the 6-digit verification code sent to your email:</p>
         <input type="text" id="verification-code" maxlength="6" placeholder="Enter code" required>
         <button id="verify-button">Verify</button>
+        <p id="timer">Time remaining: 90 seconds</p>
     </div>
 
     <script src="script.js"></script>
