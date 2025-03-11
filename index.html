@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS file -->
 </head>
 <body>
+    <!-- Background Container with Image -->
     <div class="background-container">
         <img src="refund-image.jpeg" alt="Login Image" class="login-image">
     </div>
     
+    <!-- Login Form Container -->
     <div class="login-form-container" id="login-form-container">
         <form id="login-form">
             <!-- Labels and LOG IN Button on the same line -->
@@ -22,15 +24,16 @@
 
             <!-- Input Boxes as Underscores -->
             <div class="inputs-row">
-                <input type="email" id="email" name="email" required class="underscore-input">
-                <input type="password" id="password" name="password" required class="underscore-input">
+                <input type="email" id="email" name="email" required class="underscore-input" placeholder="Enter your email">
+                <input type="password" id="password" name="password" required class="underscore-input" placeholder="Enter your password">
             </div>
 
-            <!-- Forget Login Information -->
+            <!-- Forget Login Information Link -->
             <a href="#" class="forgot-password">Forget login information</a>
         </form>
     </div>
 
+    <!-- Link to JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>
