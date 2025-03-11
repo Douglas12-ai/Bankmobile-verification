@@ -10,6 +10,7 @@ body {
     padding: 20px;
 }
 
+/* Background Container */
 .background-container {
     flex: 1;
     display: flex;
@@ -17,11 +18,13 @@ body {
     align-items: center;
 }
 
+/* Login Image */
 .login-image {
     max-width: 70%; /* Increased image size */
     height: auto;
 }
 
+/* Login Form Container */
 .login-form-container {
     position: absolute;
     top: 20px;
