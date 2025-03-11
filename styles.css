@@ -30,42 +30,32 @@ body {
     padding: 20px;
     border-radius: 8px;
     width: auto; /* Adjusted width */
-    text-align: center;
+    text-align: left; /* Align text to the left */
 }
 
 .verification-container {
     display: none;
 }
 
-/* Ensure email, password, and LOGIN button stay on the same row */
-.form-row.button-row {
+/* Labels and LOG IN Button Row */
+.labels-row {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
-    width: 100%;
+    gap: 10px; /* Space between elements */
+    margin-bottom: 5px; /* Reduced margin */
 }
 
-/* Label Styling */
-.form-row.button-row label {
+.labels-row label {
     flex: 1;
     text-align: left;
     color: #000;
+    font-weight: bold;
+    font-size: 14px; /* Reduced font size */
 }
 
-/* Input Field Styling */
-.form-row.button-row input {
-    flex: 2;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.8);
-}
-
-/* LOGIN button stays on the same row, in uppercase, and green */
-.form-row.button-row button {
+.labels-row button {
     flex: 1;
-    padding: 10px 20px;
+    padding: 10px;
     background-color: #28a745; /* Green button */
     color: #fff;
     border: none;
@@ -74,29 +64,52 @@ body {
     font-weight: bold;
     text-transform: uppercase; /* Makes text ALL CAPS */
     white-space: nowrap; /* Prevent wrapping */
+    font-size: 14px; /* Reduced font size */
 }
 
-/* Change button hover color */
-button:hover {
+.labels-row button:hover {
     background-color: #218838; /* Darker green on hover */
 }
 
-/* Ensures 'Forget Login Information' stays below password */
+/* Input Boxes as Underscores */
+.underscore-input {
+    flex: 1;
+    padding: 5px;
+    border: none; /* Remove border */
+    border-bottom: 2px solid #28a745; /* Green underscore effect */
+    background-color: transparent; /* Transparent background */
+    font-size: 14px; /* Reduced font size */
+    outline: none; /* Remove outline */
+}
+
+.underscore-input::placeholder {
+    color: transparent; /* Hide placeholder */
+}
+
+/* Input Boxes Row */
+.inputs-row {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between input boxes */
+    margin-bottom: 10px;
+}
+
+/* Forget Login Information Styling */
 .forgot-password {
     display: block;
     text-align: right;
     margin-top: -10px; /* Moves it closer to password */
     margin-bottom: 15px;
-    color: #28a745; /* Green text */
+    color: #000; /* Black text */
     text-decoration: none;
-    font-weight: bold;
+    font-size: 12px; /* Reduced font size */
 }
 
 .forgot-password:hover {
     text-decoration: underline;
 }
 
-/* Timer styling */
+/* Timer Styling */
 #timer {
     margin-top: 10px;
     font-size: 14px;
