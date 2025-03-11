@@ -21,8 +21,7 @@ body {
     height: auto;
 }
 
-.login-form-container,
-.verification-container {
+.login-form-container {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -31,10 +30,6 @@ body {
     border-radius: 8px;
     width: auto; /* Adjusted width */
     text-align: left; /* Align text to the left */
-}
-
-.verification-container {
-    display: none;
 }
 
 /* Labels and LOG IN Button Row */
@@ -107,11 +102,4 @@ body {
 
 .forgot-password:hover {
     text-decoration: underline;
-}
-
-/* Timer Styling */
-#timer {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #555;
 }
