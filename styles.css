@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -102,4 +103,37 @@ body {
 
 .forgot-password:hover {
     text-decoration: underline;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .background-container {
+        margin-bottom: 20px;
+    }
+
+    .login-form-container {
+        position: static;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .labels-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .inputs-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .labels-row button {
+        width: 100%;
+    }
 }
