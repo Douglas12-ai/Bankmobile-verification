@@ -17,7 +17,7 @@ body {
 }
 
 .login-image {
-    max-width: 100%;
+    max-width: 70%; /* Increased image size */
     height: auto;
 }
 
@@ -26,11 +26,10 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
-    background-color: #fff;
+    background-color: transparent; /* Remove white box */
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: auto; /* Adjusted width */
     text-align: center;
 }
 
@@ -38,30 +37,68 @@ body {
     display: none;
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
+/* Ensure email, password, and LOGIN button stay on the same row */
+.form-row.button-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    width: 100%;
 }
 
-input {
-    width: 100%;
+/* Label Styling */
+.form-row.button-row label {
+    flex: 1;
+    text-align: left;
+    color: #000;
+}
+
+/* Input Field Styling */
+.form-row.button-row input {
+    flex: 2;
     padding: 10px;
-    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
+/* LOGIN button stays on the same row, in uppercase, and green */
+.form-row.button-row button {
+    flex: 1;
+    padding: 10px 20px;
+    background-color: #28a745; /* Green button */
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase; /* Makes text ALL CAPS */
+    white-space: nowrap; /* Prevent wrapping */
 }
 
+/* Change button hover color */
 button:hover {
-    background-color: #0056b3;
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Ensures 'Forget Login Information' stays below password */
+.forgot-password {
+    display: block;
+    text-align: right;
+    margin-top: -10px; /* Moves it closer to password */
+    margin-bottom: 15px;
+    color: #28a745; /* Green text */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Timer styling */
+#timer {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
 }
