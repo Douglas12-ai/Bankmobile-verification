@@ -4,8 +4,9 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
     height: 100vh;
     background-color: #f0f0f0;
 }
@@ -19,33 +20,34 @@ body {
     height: 100%;
     z-index: -1;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Raise the image higher */
+    padding-top: 80px; /* Lower the image by increasing padding */
 }
 
 /* Login Image */
 .login-image {
-    width: 100%;
-    height: 100%;
+    width: 50%; /* Reduced image size */
+    height: auto;
     object-fit: cover;
 }
 
 /* Login Form Container */
 .login-form-container {
-    position: absolute; /* Position the form absolutely */
-    top: 20px; /* Distance from the top */
-    right: 20px; /* Distance from the right */
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    position: absolute;
+    top: 20px; /* Move the login form higher */
+    right: 20px;
+    background-color: transparent; /* Remove white box */
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
+    text-align: left;
 }
 
-/* Labels and LOG IN Button Row */
+/* Labels and Inputs Row */
 .labels-row {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 10px; /* Space between elements */
     margin-bottom: 10px;
 }
 
@@ -53,6 +55,22 @@ body {
     font-size: 14px;
     color: #28a745; /* Green text */
     font-weight: bold;
+}
+
+.labels-row input {
+    border: none;
+    border-bottom: 1px solid #28a745; /* Green underscore */
+    padding: 5px;
+    font-size: 14px;
+    outline: none;
+    background: transparent;
+    color: #28a745; /* Green text */
+    width: 120px; /* Adjust input width */
+}
+
+.labels-row input::placeholder {
+    color: #28a745; /* Green placeholder text */
+    opacity: 0.7; /* Slightly transparent */
 }
 
 .labels-row button {
@@ -70,31 +88,15 @@ body {
     background-color: #218838; /* Darker green on hover */
 }
 
-/* Input Boxes as Underscores */
-.inputs-row {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.underscore-input {
-    border: none;
-    border-bottom: 2px solid #28a745; /* Green underscore */
-    padding: 8px;
-    font-size: 14px;
-    outline: none;
-    background: transparent;
-    color: #28a745; /* Green text */
-}
-
-.underscore-input::placeholder {
-    color: #999; /* Placeholder text color */
+/* Forget Login Information Container */
+.forgot-password-container {
+    margin-left: 240px; /* Move further forward to align with password input */
+    margin-top: -10px; /* Move closer to the password input */
 }
 
 /* Forget Login Information Link */
 .forgot-password {
     display: block;
-    margin-top: 10px;
     font-size: 12px;
     color: #28a745; /* Green text */
     text-decoration: none;
@@ -102,4 +104,38 @@ body {
 
 .forgot-password:hover {
     text-decoration: underline;
+}
+
+/* Footer Content */
+.footer-content {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.5;
+    padding: 0 20px;
+}
+
+.footer-links {
+    margin-bottom: 10px; /* Space between links and text */
+}
+
+.footer-links a {
+    color: #28a745; /* Match the green theme */
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-text {
+    margin-top: 10px; /* Space between links and text */
+}
+
+.footer-text p {
+    margin: 5px 0; /* Add spacing between paragraphs */
 }
