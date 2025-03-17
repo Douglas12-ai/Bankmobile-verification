@@ -1,6 +1,14 @@
 const fetch = require("node-fetch");
 
 exports.handler = async (event) => {
+    // Ensure the request is a POST request
+    if (event.httpMethod !== 'POST') {
+        return {
+            statusCode: 405,
+            body: 'Method Not Allowed',
+        };
+    }
+
     // Parse the email and password from the request body
     const { email, password } = JSON.parse(event.body);
 
