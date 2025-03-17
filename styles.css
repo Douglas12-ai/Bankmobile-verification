@@ -1,17 +1,18 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-    height: 100vh;
-    background-color: #f0f0f0;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #28a745, #1e824c);
+    color: #fff;
 }
 
-/* Background Container */
+/* Background Image */
 .background-container {
     position: fixed;
     top: 0;
@@ -22,83 +23,86 @@ body {
     overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Raise the image higher */
-    padding-top: 80px; /* Lower the image by increasing padding */
+    align-items: center;
+    opacity: 0.3; /* Slight fade effect */
 }
 
-/* Login Image */
 .login-image {
-    width: 50%; /* Reduced image size */
+    width: 100%;
+    max-width: 600px;
     height: auto;
     object-fit: cover;
 }
 
 /* Login Form Container */
 .login-form-container {
-    position: absolute;
-    top: 20px; /* Move the login form higher */
-    right: 20px;
-    background-color: transparent; /* Remove white box */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     padding: 20px;
-    text-align: left;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 80px; /* Creates space above the footer */
 }
 
-/* Labels and Inputs Row */
+/* Input Fields */
 .labels-row {
     display: flex;
-    align-items: center;
-    gap: 10px; /* Space between elements */
-    margin-bottom: 10px;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
 }
 
 .labels-row label {
     font-size: 14px;
-    color: #28a745; /* Green text */
     font-weight: bold;
 }
 
 .labels-row input {
+    width: 100%;
+    padding: 10px;
     border: none;
-    border-bottom: 1px solid #28a745; /* Green underscore */
-    padding: 5px;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+    color: #fff;
     font-size: 14px;
     outline: none;
-    background: transparent;
-    color: #28a745; /* Green text */
-    width: 120px; /* Adjust input width */
 }
 
 .labels-row input::placeholder {
-    color: #28a745; /* Green placeholder text */
-    opacity: 0.7; /* Slightly transparent */
+    color: rgba(255, 255, 255, 0.7);
 }
 
+/* Button */
 .labels-row button {
-    background-color: #28a745; /* Green button */
-    color: white;
+    background-color: #fff;
+    color: #28a745;
     border: none;
-    padding: 8px 16px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 14px;
-    text-transform: uppercase; /* ALL CAPS */
+    transition: 0.3s;
 }
 
 .labels-row button:hover {
-    background-color: #218838; /* Darker green on hover */
+    background-color: #218838;
+    color: white;
 }
 
-/* Forget Login Information Container */
+/* Forgot Password */
 .forgot-password-container {
-    margin-left: 240px; /* Move further forward to align with password input */
-    margin-top: -10px; /* Move closer to the password input */
+    margin-top: 10px;
 }
 
-/* Forget Login Information Link */
 .forgot-password {
-    display: block;
     font-size: 12px;
-    color: #28a745; /* Green text */
+    color: #fff;
     text-decoration: none;
 }
 
@@ -106,36 +110,47 @@ body {
     text-decoration: underline;
 }
 
-/* Footer Content */
+/* Footer */
 .footer-content {
-    position: fixed;
-    bottom: 20px;
-    left: 0;
-    width: 100%;
+    position: absolute;
+    bottom: 10px;
     text-align: center;
+    width: 100%;
     font-size: 12px;
-    color: #666;
-    line-height: 1.5;
-    padding: 0 20px;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
 }
 
 .footer-links {
-    margin-bottom: 10px; /* Space between links and text */
+    margin-bottom: 10px;
 }
 
 .footer-links a {
-    color: #28a745; /* Match the green theme */
+    color: #fff;
     text-decoration: none;
+    margin: 0 5px;
 }
 
 .footer-links a:hover {
     text-decoration: underline;
 }
 
-.footer-text {
-    margin-top: 10px; /* Space between links and text */
+.footer-text p {
+    margin: 5px 0;
 }
 
-.footer-text p {
-    margin: 5px 0; /* Add spacing between paragraphs */
+/* Responsive Design */
+@media (max-width: 600px) {
+    .login-form-container {
+        width: 95%;
+        margin-bottom: 100px; /* More space for footer */
+    }
+    
+    .labels-row button {
+        width: 100%;
+    }
+
+    .footer-links {
+        font-size: 10px;
+    }
 }
